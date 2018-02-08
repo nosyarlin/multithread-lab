@@ -19,20 +19,19 @@ int main (int argc, const char * argv[])
 {
 	FILE *fp;
 	int index = 0;
-	int key;
+	int *buf = malloc(sizeof(int));
 	int start;
 	int end;
 	int chunksize;
 	// TODO: read data from external file and store it in an array
 	// Note: you should pass the file as a first command line argument at runtime.
 	fp = fopen(argv[1], "r");
-	while (fscanf(fp, "%d ", &key) != EOF) {
-		array[index] = key;
-		++index;
+	while (index != SIZE) {
+		fscanf(fp, "%d", buf);
+		array[index] = buf[0];
+		index++;
 	}
 	fclose(fp);
-
-	printf("%d\n", array[0]);
 
 	// define number of threads
     int number_of_threads = atoi(argv[2]); 
@@ -41,7 +40,7 @@ int main (int argc, const char * argv[])
 	// a second command line argument at runtime. 
 
     // TODO: partition the array list into N sub-arrays, where N is the number of threads
-    chunksize = ceil(SIZE/number_of_threads);
+    chunksize = (SIZE/number_of_threads);
     int subarray[number_of_threads][chunksize];
 
     for (int i = 0; i < number_of_threads; i++) {
@@ -82,7 +81,7 @@ int main (int argc, const char * argv[])
 
 	pthread_create(&findMean, NULL, get_global_mean, temp);
 
-	// wait for the final mean computing thread to finish
+	//wait for the final mean computing thread to finish
 	pthread_join(findMean, NULL);
 
 	// TODO: stop recording time and compute the elapsed time
@@ -94,7 +93,6 @@ int main (int argc, const char * argv[])
 	// TODO: printout the execution time
 	printf("%s %f\n", "Time elapsed =", time_elapsed);
 
-	free(temp);
     return 0;
 }
 
@@ -107,11 +105,12 @@ void *get_temporal_mean(void *params) {
 	double mean;
 
 	input = (int*) params;
-	num_ints = sizeof(input)/sizeof(int);
+	num_ints = sizeof(input)/sizeof(*input);
 	for (int i = 0; i < num_ints; ++i) {
 		total = total + input[i];
 	}
 	mean = total/num_ints;
+
 	pthread_mutex_lock(&mutex);
 	temp[count] = mean;
 	count++;
@@ -128,7 +127,7 @@ void *get_global_mean(void *params) {
 	int *input;
 
 	input = (int*) params;
-	num_ints = sizeof(input)/sizeof(int);
+	num_ints = sizeof(input)/sizeof(*input);
 	for (int i = 0; i < num_ints; ++i) {
 		total = total + input[i];
 	}
