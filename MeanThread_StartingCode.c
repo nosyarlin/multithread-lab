@@ -19,13 +19,15 @@ int main (int argc, const char * argv[])
 {
 	FILE *fp;
 	int index = 0;
+	int key;
 	int start;
 	int end;
 	int chunksize;
 	// TODO: read data from external file and store it in an array
 	// Note: you should pass the file as a first command line argument at runtime.
 	fp = fopen(argv[1], "r");
-	while (fscanf(fp, "%d ", &array[index]) != EOF) {
+	while (fscanf(fp, "%d ", &key) != EOF) {
+		array[index] = key;
 		++index;
 	}
 	fclose(fp);
