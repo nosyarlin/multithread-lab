@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.3)  14 FEB 2018 21:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.3)  14 FEB 2018 22:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1010,31 +1010,37 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.14}).
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (7.11607pt too wide) in paragraph at lines 97--98
+Overfull \hbox (7.11607pt too wide) in paragraph at lines 99--100
 [][] 
  []
 
-[2] [3] (cache/report.aux) ) 
+[2] <mean_graph.png, id=19, 634.5306pt x 398.9304pt>
+File: mean_graph.png Graphic file (type png)
+ <use mean_graph.png>
+Package pdftex.def Info: mean_graph.png used on input line 106.
+(pdftex.def)             Requested size: 469.75502pt x 295.34387pt.
+
+[3] [4 <./mean_graph.png (PNG copy)>] (cache/report.aux) ) 
 Here is how much of TeX's memory you used:
- 39782 strings out of 492995
- 1023705 string characters out of 6132705
- 1204531 words of memory out of 5000000
- 42855 multiletter control sequences out of 15000+600000
+ 39789 strings out of 492995
+ 1023806 string characters out of 6132705
+ 1204821 words of memory out of 5000000
+ 42860 multiletter control sequences out of 15000+600000
  11844 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,11n,111p,10374b,1898s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb>
-Output written on cache/report.pdf (3 pages, 79978 bytes).
+</usr/local/texlive/2
+017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on cache/report.pdf (4 pages, 135130 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 49 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
