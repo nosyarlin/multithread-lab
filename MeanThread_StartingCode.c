@@ -11,6 +11,7 @@
 
 void *get_temporal_mean(void *params);	/* thread that computes mean values from the original array*/
 void *get_global_mean(void *params);	/* thread that computes global mean from each sub mean*/
+int read_to_array(FILE *fp);
 
 int array[SIZE] = {};
 int count = 0;
@@ -61,11 +62,6 @@ int main (int argc, const char * argv[])
 		pthread_join(workers[i], NULL);
 	}
 
-	//printout temporal mean values computed by each thread
-	for (int i = 0; i < number_of_threads; ++i) {
-		printf("Temp mean %d = %f\n", i, temp[i]);
-	}
-
 	//establish the final mean computing thread
 	pthread_t findMean;
 
@@ -78,10 +74,15 @@ int main (int argc, const char * argv[])
 	clock_t t1 = clock();
 	double time_elapsed = (double)(t1 - t0) / CLOCKS_PER_SEC;
 
+	//printout temporal mean values computed by each thread
+	for (int i = 0; i < number_of_threads; ++i) {
+		printf("Temp mean %d = %f\n", i, temp[i]);
+	}
+
 	// printout the global mean value
 	printf("%s %f\n", "Global mean =",globalMean);
 	// printout the execution time
-	printf("%s %fs\n", "Time elapsed =", time_elapsed);
+	printf("%s %fms\n", "Time elapsed =", time_elapsed*1000);
 
     return 0;
 }
